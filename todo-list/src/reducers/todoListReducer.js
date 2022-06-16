@@ -10,9 +10,7 @@ export const todoListReducer = (state, action) => {
         { description: action.description },
       ];
     case TYPES.REMOVE_ALL_TASKS:
-      return {
-        initialState,
-      };
+      return initialState;
     default:
       return state;
   }
