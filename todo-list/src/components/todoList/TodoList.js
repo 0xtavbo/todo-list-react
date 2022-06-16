@@ -1,34 +1,42 @@
 import React, { useState, useContext } from "react";
 import TodoListReducer from "../../context/TodoListReducer";
-import { TYPES } from "../../actionTypes/actions";
-import { AddButtonStyled, InputStyled } from "./TodoListStyles";
-import RemoveAll from "../removeAll/RemoveAll";
+import { ButtonStyled, InputStyled } from "./TodoListStyles";
 import TaskItem from "../taskItem/TaskItem";
+import { addTask, removeAll } from "../../reducers/todoListReducer";
 
 const TodoList = () => {
-  const [state, dispatch] = useContext(TodoListReducer);
   const [taskDescription, setTaskDescription] = useState("");
+  const [tasks, dispatch] = useContext(TodoListReducer);
 
   const handleAddTask = () => {
-    dispatch({ type: TYPES.ADD_TASK, description: taskDescription });
-    console.log(state);
+    dispatch(addTask(taskDescription));
+    setTaskDescription("");
+  };
+
+  const handleRemoveAll = () => {
+    dispatch(removeAll());
   }
 
   const handleTaskDescription = (e) => {
-      console.log(state.todos.length > 0);
-      console.log(e.target.value);
-      setTaskDescription(e.target.value);
+    setTaskDescription(e.target.value);
   };
 
   return (
     <>
-      <InputStyled onChange={handleTaskDescription}/>
-      <AddButtonStyled onClick={handleAddTask}>
-          Add task
-      </AddButtonStyled>
-      { state.todos.length && state.todos.map((todo) => {
-          <TaskItem description={todo.description} />
-      })}
+      <InputStyled
+        type="text"
+        onChange={handleTaskDescription}
+        placerholder="Add your task details here..."
+      />
+      <ButtonStyled onClick={handleAddTask}>Add task</ButtonStyled>
+      <ButtonStyled onClick={handleRemoveAll}>Remove all</ButtonStyled>
+
+      { tasks.length
+          ? tasks.map((todo, id) => {
+              return <TaskItem key={id} description={todo.description} />
+            })
+          : `You don't have any tasks in your list`
+      }
     </>
   );
 };

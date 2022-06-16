@@ -5,10 +5,10 @@ export const initialState = [];
 export const todoListReducer = (state, action) => {
   switch (action.type) {
     case TYPES.ADD_TASK:
-      return {
+      return [
         ...state,
-        todos: [...state.todos, { description: action.description }]
-      };
+        { description: action.description },
+      ];
     case TYPES.REMOVE_ALL_TASKS:
       return {
         initialState,
@@ -17,3 +17,16 @@ export const todoListReducer = (state, action) => {
       return state;
   }
 };
+
+export function addTask(text) {
+  return {
+    type: TYPES.ADD_TASK,
+    description: text
+  };
+}
+
+export function removeAll() {
+  return {
+    type: TYPES.REMOVE_ALL_TASKS
+  };
+}

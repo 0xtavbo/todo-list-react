@@ -8,6 +8,7 @@ function App() {
     <>
       <TodoListReducerProvider>
         <div className="todolist-container">
+          <h3>ToDo List</h3>
           <TodoList />
         </div>
       </TodoListReducerProvider>

@@ -1,10 +1,9 @@
 import React from "react";
 import { ParagraphStyled } from "./TaskItemStyles";
 
-const TaskItem = ({ description }) => {
-
+const TaskItem = ({ id, description }) => {
     return (
-        <ParagraphStyled>
+        <ParagraphStyled key={id}>
             {description}
         </ParagraphStyled>
     )
