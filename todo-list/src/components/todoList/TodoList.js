@@ -32,9 +32,7 @@ const TodoList = () => {
       <ButtonStyled onClick={handleRemoveAll}>Remove all</ButtonStyled>
 
       { tasks.length
-          ? tasks.map((todo, id) => {
-              return <TaskItem key={id} description={todo.description} />
-            })
+          ? tasks.map((todo, id) => { return <TaskItem key={id} description={todo.description} /> })
           : `You don't have any tasks in your list`
       }
     </>
