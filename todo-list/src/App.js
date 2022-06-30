@@ -1,17 +1,11 @@
 import './App.css';
 import GlobalStyle from './styles/GlobalStyle';
-import TodoList from './components/todoList/TodoList';
-import { TodoListReducerProvider } from './context/TodoListReducer';
+import Routes from './routes/Routes'
 
 function App() {
   return (
     <>
-      <TodoListReducerProvider>
-        <div className="todolist-container">
-          <h3>ToDo List</h3>
-          <TodoList />
-        </div>
-      </TodoListReducerProvider>
+      <Routes />
       <GlobalStyle />
     </>
   );
