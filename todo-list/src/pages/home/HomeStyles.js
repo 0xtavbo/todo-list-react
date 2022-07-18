@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { desktop, tablet, widescreen } from "../../media/queries";
+import { motion } from "framer-motion";
 
-export const HomeContainerStyled = styled.div`
+export const HomeContainerStyled = styled(motion.div)`
   display: flex;
   justify-content: space-around;
 

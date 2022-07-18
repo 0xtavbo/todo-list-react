@@ -1,0 +1,25 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "name": "frontend",
+      "tasks": [
+        {"id": 1,"description":"Study React", "completed": false},
+        {"id": 2,"description":"Finish this app", "completed": false}
+      ],
+      "tags": ["it", "work", "programming"],
+      "completed": false
+    },
+    {
+      "id": 2,
+      "name": "exercise",
+      "tasks": [
+        {"id": 1,"description":"jump the rope", "completed": false},
+        {"id": 2,"description":"go for a run", "completed": false},
+        {"id": 3,"description":"sub a gym", "completed": false}
+      ],
+      "tags": ["health", "training"],
+      "completed": false
+    }
+  ]
+}

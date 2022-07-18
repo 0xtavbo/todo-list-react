@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  HomeButtonStyled,
   HomeContainerStyled,
   HomeContentStyled,
   HomeDescriptionStyled,
@@ -12,9 +11,9 @@ const Home = () => {
   return (
     <HomeContainerStyled>
       <HomeContentStyled>
-        <HomeTitleStyled>Betar</HomeTitleStyled>
+        <HomeTitleStyled>Todor</HomeTitleStyled>
         <HomeDescriptionStyled>
-          Enjoy your to-do lists, along with the number 1 Pokémon Encyclopedia of the world!
+          Enjoy your to-do lists, all in one place
         </HomeDescriptionStyled>
       </HomeContentStyled>
     </HomeContainerStyled>

@@ -19,7 +19,7 @@ const TodoList = () => {
     dispatch(removeAll());
     console.log(tasks.length);
     console.log(tasks);
-  }
+  };
 
   const handleTaskDescription = (e) => {
     setTaskDescription(e.target.value);
@@ -32,16 +32,19 @@ const TodoList = () => {
           type="text"
           onChange={handleTaskDescription}
           placeholder="Add your task details here..."
-          value={taskDescription || ''}
+          value={taskDescription || ""}
         />
         <ButtonStyled onClick={handleAddTask}>Add task</ButtonStyled>
       </DivStyled>
       <ButtonStyled onClick={handleRemoveAll}>Remove all</ButtonStyled>
 
-      { tasks.length
-          ? tasks.map((todo, id) => { return <TaskItem key={id} description={todo.description} /> })
-          : (<p>You don't have any pending tasks in your list</p>)
-      }
+      {tasks.length ? (
+        tasks.map((todo, id) => {
+          return <TaskItem key={id} description={todo.description} />;
+        })
+      ) : (
+        <p>You don't have any pending tasks in your list</p>
+      )}
     </>
   );
 };

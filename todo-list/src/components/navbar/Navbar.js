@@ -7,6 +7,7 @@ import {
   NavbarContainerStyled,
   TitleStyled,
 } from "./NavbarStyles";
+import Logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -14,17 +15,14 @@ const Navbar = () => {
   return (
     <NavbarContainerStyled>
       <LogoStyled onClick={() => navigate("/")}>
-        <img
-          src="https://res.cloudinary.com/dcatzxqqf/image/upload/v1655752940/coding/ReactQuery/LogoNucba_rtlry0.png"
-          alt="Logo"
-        />
-        <TitleStyled>Betar</TitleStyled>
+        <img src={Logo} alt="Logo" />
+        <TitleStyled>Todor</TitleStyled>
       </LogoStyled>
 
       <LinkContainerStyled>
         <LinkItem to="/">Home</LinkItem>
-        <LinkItem to="todolist">To Do List</LinkItem>
-        <LinkItem to="pokedex">Pokedex</LinkItem>
+        <LinkItem to="/lists">Lists</LinkItem>
+        <LinkItem to="/create">Create</LinkItem>
       </LinkContainerStyled>
     </NavbarContainerStyled>
   );

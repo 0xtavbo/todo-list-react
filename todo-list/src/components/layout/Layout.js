@@ -1,13 +1,8 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
+import { LayoutWrapper } from "./LayoutStyles";
 
 const Layout = ({ children }) => {
-  return (
-    <>
-      <Navbar />
-      <div>{children}</div>
-    </>
-  );
+  return <LayoutWrapper>{children}</LayoutWrapper>;
 };
 
 export default Layout;

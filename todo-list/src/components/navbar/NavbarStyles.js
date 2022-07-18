@@ -21,13 +21,15 @@ export const LogoStyled = styled.div`
   cursor: pointer;
 
   & img {
-    margin-top: 13px;
+    height: 50px;
+    margin-right: 15px;
+    filter: invert(100);
   }
 `;
 
 export const TitleStyled = styled.h2`
   margin: 0;
-
+  align-items: center;
   font-weight: 700;
   font-size: 24px;
   line-height: 40px;
@@ -43,4 +45,12 @@ export const LinkContainerStyled = styled.div`
   display: flex;
 
   gap: 45px;
+
+  a:last-child {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+  }
 `;
